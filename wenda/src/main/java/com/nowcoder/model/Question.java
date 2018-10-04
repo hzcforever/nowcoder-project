@@ -2,9 +2,6 @@ package com.nowcoder.model;
 
 import java.util.Date;
 
-/**
- * Created by nowcoder on 2016/7/15.
- */
 public class Question {
     private int id;
     private String title;
