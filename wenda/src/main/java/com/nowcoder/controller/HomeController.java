@@ -52,4 +52,5 @@ public class HomeController {
         model.addAttribute("vos", getQuestions(userId, 0, 10));
         return "index";
     }
+
 }
