@@ -10256,7 +10256,7 @@ html.no-touchevents .zu-top-nav-userinfo:hover {
 .topnav-noauth {
     float: right;
     margin: 0 0 0 15px;
-    line-height: 46px
+    line-height: 45px
 }
 
 .topnav-noauth .zg-icon {
@@ -10268,8 +10268,8 @@ html.no-touchevents .zu-top-nav-userinfo:hover {
 .topnav-noauth a {
     padding: 0 10px;
     width: auto;
-    height: 46px;
-    line-height: 46px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     display: block;
     color: #eee;
