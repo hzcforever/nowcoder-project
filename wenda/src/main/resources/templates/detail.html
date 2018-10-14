@@ -93,7 +93,7 @@
                             <i class="icon vote-arrow"></i>
                             <span class="count js-voteCount">$!{comment.likeCount}</span>
                             <span class="label sr-only">赞同</span>
-                        </button>
+
 
                         #if($comment.liked < 0)
                         <button class="down js-dislike pressed" title="反对，不会显示你的姓名">
@@ -102,11 +102,12 @@
                         #end
                             <i class="icon vote-arrow"></i>
                             <span class="label sr-only">反对，不会显示你的姓名</span>
-                        </button>
                     </div>
+
                     <div class="answer-head">
                         <div class="zm-item-answer-author-info">
-                            <a class="zm-item-link-avatar avatar-link" href="" target="_blank" data-tip="p$t$yingxiaodao">
+                            <a class="zm-item-link-avatar avatar-link" href="" target="_blank"
+                               data-tip="p$t$yingxiaodao">
                                 <img src="${comment.user.headUrl}" class="zm-list-avatar avatar"></a>
                             <a class="author-link" data-tip="p$t$yingxiaodao" target="_blank" href="">${comment.user.name}</a>
                         </div>
@@ -116,7 +117,9 @@
                                 </span>
                         </div>
                     </div>
-                    <div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="6727688" data-action="/answer/content" data-author-name="营销岛" data-entry-url="/question/36301524/answer/66862039">
+                    <div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="6727688"
+                         data-action="/answer/content" data-author-name="营销岛"
+                         data-entry-url="/question/36301524/answer/66862039">
 
                         <div class="zm-editable-content clearfix">
                             $comment.comment.content
@@ -125,12 +128,14 @@
                     <a class="zg-anchor-hidden ac" name="22162611-comment"></a>
                     <div class="zm-item-meta answer-actions clearfix js-contentActions">
                         <div class="zm-meta-panel">
-                            <a itemprop="url" class="answer-date-link meta-item" target="_blank" href="">发布于 $date.format('yyyy-MM-dd HH:mm:ss', $comment.comment.createdDate)</a>
+                            <a itemprop="url" class="answer-date-link meta-item" target="_blank" href="">发布于
+                                $date.format('yyyy-MM-dd HH:mm:ss', $comment.comment.createdDate)</a>
                             <a href="" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
                                 <i class="z-icon-comment"></i>4 条评论</a>
 
                             <button class="item-collapse js-collapse" style="transition: none;">
-                                <i class="z-icon-fold"></i>收起</button>
+                                <i class="z-icon-fold"></i>收起
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -140,20 +145,21 @@
 
             <form action="/addComment" method="post">
                 <input type="hidden" name="questionId" value="$!{question.id}"/>
-            <div id="zh-question-answer-form-wrap" class="zh-question-answer-form-wrap">
-                <div class="zm-editable-editor-wrap" style="">
-                    <div class="zm-editable-editor-outer">
-                        <div class="zm-editable-editor-field-wrap">
-                            <textarea name="content" id="content" class="zm-editable-editor-field-element editable" style="width:100%;"></textarea>
+                <div id="zh-question-answer-form-wrap" class="zh-question-answer-form-wrap">
+                    <div class="zm-editable-editor-wrap" style="">
+                        <div class="zm-editable-editor-outer">
+                            <div class="zm-editable-editor-field-wrap">
+                                <textarea name="content" id="content" class="zm-editable-editor-field-element editable"
+                                          style="width:100%;"></textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="zm-command clearfix">
+                        <div class="zm-command clearfix">
                             <span class=" zg-right">
                                 <button type="submit" class="submit-button zg-btn-blue">发布回答</button></span>
+                        </div>
                     </div>
                 </div>
-            </div>
             </form>
 
         </div>
