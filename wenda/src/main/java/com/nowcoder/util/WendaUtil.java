@@ -9,6 +9,8 @@ public class WendaUtil {
 
     public static int ANONYMOUS_USERID = 3; //匿名用户id
 
+    public static int SYSTEM_USERID = 0;
+
     public static String getJSONString(int code) {
         JSONObject json = new JSONObject();
         json.put("code", code);
