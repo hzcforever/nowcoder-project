@@ -1,5 +1,6 @@
 package com.nowcoder.controller;
 
+import com.nowcoder.async.EventProducer;
 import com.nowcoder.service.UserService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -22,6 +23,9 @@ public class LoginController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    EventProducer eventProducer;
 
     @RequestMapping(path = {"/reg/"}, method = RequestMethod.POST)
     public String register(Model model,
@@ -61,7 +65,15 @@ public class LoginController {
             if (map.containsKey("ticket")) {
                 Cookie cookie = new Cookie("ticket", map.get("ticket"));
                 cookie.setPath("/");
+                if (rememberme) {
+                    cookie.setMaxAge(3600 * 24 * 5);
+                }
                 response.addCookie(cookie);
+
+//                eventProducer.fireEvent(new EventModel(EventType.LOGIN)
+//                        .setExt("username", username).setExt("email", "hzcforever@163.com")
+//                        .setActorId(Integer.parseInt(map.get("userId"))));
+
                 if (StringUtils.isNotBlank(next)) {
                     return "redirect:" + next;
                 }

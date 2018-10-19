@@ -2,6 +2,8 @@ package com.nowcoder;
 
 import com.nowcoder.dao.QuestionDAO;
 import com.nowcoder.dao.UserDAO;
+import com.nowcoder.model.EntityType;
+import com.nowcoder.service.FollowService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class InitDatabaseTests {
 
     @Autowired
     QuestionDAO questionDAO;
+
+    @Autowired
+    FollowService followService;
 
     @Test
     public void initDatabase(){
@@ -44,5 +49,11 @@ public class InitDatabaseTests {
 //            question.setContent(String.format("content%d:balabala", i + 1));
 //            questionDAO.addQuestion(question);
 //        }
+        //互相关注
+        for (int i = 0; i < 11; i++) {
+            for (int j = 1; j < i; j++) {
+                followService.follow(j, EntityType.ENTITY_USER, i);
+            }
+        }
     }
 }
