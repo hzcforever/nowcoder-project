@@ -24,18 +24,19 @@
 <ul style="list-style-type:none">
 <li><a href="#1">1项目基本配置</a></li>
 <li><a href="#2">2基本框架开发</a></li>
-<li><a href="#3">3数据库配置和首页的创建</a></li>
-<li><a href="#4">4用户注册登录以及使用token</a></li>
-<li><a href="#5">5新增发表问题功能，并防止xss注入以及敏感词过滤</a></li>
-<li><a href="#6">6新增评论和站内信功能</a></li>
-<li><a href="#7">7新增点赞和点踩功能,使用Redis实现</a></li>
-<li><a href="#8">8新增异步消息功能,新增邮件发送组件</a></li>
-<li><a href="#9">9新增关注功能，开发关注页面和粉丝页面</a></li>
-<li><a href="#10">10Timeline与新鲜事，推拉模式下的Feed流</a></li>
-<li><a href="#11">11使用python爬虫爬取知乎和v2ex数据，充实网站信息</a></li>
-<li><a href="#12">12使用solr搭建全文搜索引擎，开发知乎的全文搜索功能</a></li>
-<li><a href="#13">13单元测试与压力测试，项目打包及部署等收尾工作</a></li>
-<li><a href="#14">14产品功能扩展以及技术深度扩展</a></li>
+<li><a href="#3">3AOP和IOC</a></li>
+<li><a href="#4">4数据库配置和首页的创建</a></li>
+<li><a href="#5">5用户注册登录以及使用token</a></li>
+<li><a href="#6">6新增发表问题功能，并防止xss注入以及敏感词过滤</a></li>
+<li><a href="#7">7新增评论和站内信功能</a></li>
+<li><a href="#8">8新增点赞和点踩功能,使用Redis实现</a></li>
+<li><a href="#9">9新增异步消息功能,新增邮件发送组件</a></li>
+<li><a href="#10">10新增关注功能，开发关注页面和粉丝页面</a></li>
+<li><a href="#11">11Timeline与新鲜事，推拉模式下的Feed流</a></li>
+<li><a href="#12">12使用python爬虫爬取知乎和v2ex数据，充实网站信息</a></li>
+<li><a href="#13">13使用solr搭建全文搜索引擎，开发知乎的全文搜索功能</a></li>
+<li><a href="#14">14单元测试与压力测试，项目打包及部署等收尾工作</a></li>
+<li><a href="#15">15产品功能扩展以及技术深度扩展</a></li>
 </ul>
 
 <h2 id = "1">项目基础配置</h2>
@@ -119,7 +120,7 @@
 
 	ajax异步加载数据 json数据传输等。
 
-<h2 id = "5">新增发表问题功能，并防止xss注入以及敏感词过滤
+<h2 id = "6">新增发表问题功能，并防止xss注入以及敏感词过滤
 
 	新增Question相关的model，dao，service和controller。
 
