@@ -1,5 +1,6 @@
 (function (window, undefined) {
-    var Action = Base.createClass('main.util.Action');
+    var Action = Base.getClass('main.util.Action');
+    var Business = Base.getClass('main.util.Business');
 
     Base.ready({
         initialize: fInitialize,
@@ -12,6 +13,11 @@
 
     function fInitialize() {
         var that = this;
+        // 点击关注问题
+        Business.followQuestion({
+            countEl: $('.js-user-count'),
+            listEl: $('.js-user-list')
+        });
     }
 
     function fVote(oEvent) {
@@ -39,7 +45,7 @@
             error: function (oResult) {
                 if (oResult.code === 999) {
                     alert('请登录后再操作');
-                    window.location.href = '/relogin?next=' + window.decodeURIComponent(window.location.href);
+                    window.location.href = '/reglogin?next=' + window.decodeURIComponent(window.location.href);
                 } else {
                     alert('出现错误，请重试');
                 }
