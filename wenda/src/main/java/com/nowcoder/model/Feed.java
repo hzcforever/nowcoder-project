@@ -1,5 +1,7 @@
 package com.nowcoder.model;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.Date;
 
 public class Feed {
@@ -8,6 +10,7 @@ public class Feed {
     private int userId;
     private Date createdDate;
     private String data;
+    private JSONObject dataJSON = null;
 
     public int getId() {
         return id;
@@ -47,5 +50,10 @@ public class Feed {
 
     public void setData(String data) {
         this.data = data;
+        dataJSON = JSONObject.parseObject(data);
+    }
+
+    public String get(String key) {
+        return dataJSON == null ? null : dataJSON.getString(key);
     }
 }

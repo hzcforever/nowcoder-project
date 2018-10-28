@@ -8,10 +8,9 @@ import com.nowcoder.model.EntityType;
 import com.nowcoder.model.Feed;
 import com.nowcoder.model.Question;
 import com.nowcoder.model.User;
-import com.nowcoder.service.FeedService;
-import com.nowcoder.service.MessageService;
-import com.nowcoder.service.QuestionService;
-import com.nowcoder.service.UserService;
+import com.nowcoder.service.*;
+import com.nowcoder.util.JedisAdapter;
+import com.nowcoder.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +31,12 @@ public class FeedHandler implements EventHandler {
 
     @Autowired
     FeedService feedService;
+
+    @Autowired
+    FollowService followService;
+
+    @Autowired
+    JedisAdapter jedisAdapter;
 
     private String buildFeedData(EventModel model) {
         Map<String, String> map = new HashMap<>();
@@ -67,6 +72,15 @@ public class FeedHandler implements EventHandler {
             return ;
         }
         feedService.addFeed(feed);
+
+        //给事件的粉丝推
+        List<Integer> followers = followService.getFollowers(EntityType.ENTITY_USER, model.getActorId(), Integer.MAX_VALUE);
+        followers.add(0);
+        for (int follower : followers) {
+            String timelineKey = RedisKeyUtil.getTimelineKey(follower);
+            jedisAdapter.lpush(timelineKey, String.valueOf(feed.getId()));
+        }
+
     }
 
     @Override
