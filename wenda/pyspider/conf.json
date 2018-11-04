@@ -1,0 +1,9 @@
+{
+	"message_queue":"redis://127.0.0.1:6379/0",
+	"webui":{
+		"port":5001,
+		"need-auth":true,
+		"username":"root",
+		"password":"150000"
+	}
+}
