@@ -43,7 +43,7 @@
     
 **使用http规范下的httpservletrequest和httpservletresponse来封装请求和相响应，使用封装好的session和cookie对象。**
     
-**使用重定向的redirectview和统一异常处理器exceptionhandler。 ** 
+**使用重定向的redirectview和统一异常处理器exceptionhandler。** 
 
 
 > ## AOP和IOC ##
