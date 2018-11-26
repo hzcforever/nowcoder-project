@@ -1,6 +1,6 @@
 # nowcoder-project
 
-**数据库使用了redis和mysql，同时加入了异步消息等进阶功能，同时使用python爬虫进行数据填充。旨在提高对项目全局的把控和代码编写能力。**
+**这个项目是以现在的知乎、牛客网这类问答平台为原型，基于springboot的SSM框架的Java web应用项目。数据库使用了redis和mysql，同时加入了异步消息等进阶功能，同时使用python爬虫进行数据填充。旨在提高对项目全局的把控和代码编写能力。**
 
 # quick-start
 
