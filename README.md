@@ -2,7 +2,7 @@
 
 **这个项目是以现在的知乎、牛客网这类问答平台为原型，基于springboot的SSM框架的Java web应用项目。数据库使用了redis和mysql，同时加入了异步消息等进阶功能，同时使用python爬虫进行数据填充。**
 
-# quick-start
+# 目录
 
 - 1.项目基本配置
 - 2.基本框架开发
@@ -15,11 +15,9 @@
 - 9.新增异步消息功能
 - 10.新增关注功能，开发关注页面和粉丝页面
 - 11.Timeline与新鲜事，推拉模式下的Feed流
-- 12.使用python爬虫爬取知乎话题数据，充实网站信息
+- 12.使用爬虫爬取知乎话题数据，充实网站信息
 - 13.使用solr搭建全文搜索引擎，开发知乎的全文搜索功能
 - 14.产品功能扩展以及技术深度扩展
-
----
 
 > ## 项目基础配置 ##
 
@@ -29,9 +27,8 @@
     
 **生成maven项目，pom.xml包含上述依赖。** 
 
-
 > ## 基本框架开发 ##
-    
+
 **创建基本的controller，service和model层。**
     
 **controller中使用注解配置，requestmapping，responsebody基本可以解决请求转发以及响应内容的渲染。responsebody自动选择viewresolver进行解析。**
@@ -44,7 +41,6 @@
     
 **使用重定向的redirectview和统一异常处理器exceptionhandler。** 
 
-
 > ## AOP和IOC ##
 
 **IOC解决对象实例化以及依赖传递问题，解耦。**
@@ -52,7 +48,6 @@
 **AOP解决纵向切面问题，主要实现日志和权限控制功能**。
     
 **aspect实现切面，并且使用logger来记录日志，用该切面的切面方法来监听controller。**
-
 
 > ## 数据库配置和首页的创建 ##
 
@@ -80,7 +75,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
     
 **至此主页基本完成。**
 
-
 > ## 用户注册登录以及使用token ##
 
 **完成用户注册和登录的controller,service和dao层代码。**
@@ -99,7 +93,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 
 **数据安全性的保障手段：https使用公钥加密私钥解密，比如支付宝的密码加密，单点登录验证，验证码机制等。**
 
-
 > ## 新增发表问题功能，并防止xss注入以及敏感词过滤 ##
 
 **新增Question相关的model，dao，service和controller。**
@@ -109,7 +102,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 **防止xss注入直接使用HTMLutils的方法即可实现。**
 
 **过滤敏感词首先需要建立一个字典树，并且读取一份保存敏感词的文本文件，然后初始化字典树。最后将过滤器作为一个服务，让需要过滤敏感词的服务进行调用即可。**
-
 
 > ## 新增评论和站内信功能 ##
 
@@ -125,7 +117,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 
 **本节内容基本就是业务逻辑的开发，没有新增什么技术点，主要是前后端交互的逻辑比较复杂，前端的开发量也比较大。**
 
-
 > ## 新增点赞和点踩功能，使用Redis实现 ##
 
 **首先了解一下redis的基础知识，数据结构，jedis使用等。**
@@ -137,7 +128,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 **根据需求确定key字段，格式是 like：实体类型：实体id 和 dislike：实体类型：实体id 这样可以将喜欢一条新闻的人存在一个集合，不喜欢的存在另一个集合。通过统计数量可以获得点赞和点踩数。**
 
 **一般点赞点踩操作是先修改redis的值并获取返回值，然后再异步修改mysql数据库的likecount数值。这样既可以保证点赞操作快速完成，也可保证数据一致性。**
-
 
 > ## 新增异步消息框架 ##
 
@@ -151,7 +141,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 
 **如此一来，整个异步事件的框架就开发完成了。后面新加入的登录，点赞等事件都可以这么实现。**
 
-
 > ## 新增关注功能，开发关注页面和粉丝页面 ##
 
 **新增关注功能，使用redis实现每一个关注对象的粉丝列表以及每一个用户的关注对象列表。通过该列表的crud操作可以对应获取粉丝列表和关注列表，并且实现关注和取关功能。**
@@ -163,7 +152,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 **对于粉丝列表，除了显示粉丝的基本信息之外，还要显示当前用户是否关注了这个粉丝，以便前端显示。**
 
 **对于关注列表来说，如果被关注对象是用户的话，除了显示用户的基本信息之外，还要显示当前用户是被这个用户关注，以便前端显示。**
-
 
 > ## Timeline与新鲜事，推拉模式下的Feed流 ##
 
@@ -183,8 +171,7 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 
 **为了适配推送模式，此时也要把新鲜事放到该用户所有粉丝的timeline里，这样的话就同时实现了推和拉的操作了。**
 
-
-> ## 使用python爬虫爬取知乎和v2ex数据，充实网站信息 ##
+> ## 使用爬虫爬取知乎数据，充实网站信息 ##
 
 **安装python3.x并且配置环境变量。同时安装pycharm,安装pip。**
 
@@ -197,7 +184,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 **当然现在我们有更方便的工具pyspider，可以方便解析请求并且可以设置代理，伪装身份等，直接传入url并且写好多级的解析函数，程序便会迭代执行，直到把所有页面的内容解析出来。这里我们直接启动pyspider的web应用并且写好python代码，就可以执行爬虫了。**
 
 **知乎：先找到问题，再把问题下所有的回答进行爬取，最后把问题和评论一起处理。**
-
 
 > ## 使用solr搭建全文搜索引擎，开发知乎的全文搜索功能 ##
 
@@ -214,7 +200,6 @@ spring.velocity.toolbox-config-location=toolbox.xml**
 **为了通过数据库向solr导入数据，我们需要配置数据导入处理器，这是需要修改solrconfig文件来配置数据导入处理器，并且在solr-data-config中配置本地数据库地址，这样就可以在solr的web页面中进行数据库导入了。导入之后自动建立索引，我们就可以使用solr来对数据库进行全文搜索了。比如mysql数据库进行普通搜索，把数据导入solr进行全文搜索。**
 
 **开发搜索相关功能，开发service并且接入solr的api，从而连接本机的solr服务并且执行查询和索引操作。只需要指定关键字，以及我们要搜索的栏目（本例中主要title和content，所以传入这两个字段，并且在搜索结果中加亮关键字。开发相关controller以及页面。并且在新增问题以后执行异步事件，将新增的问题数据加入solr的数据库中，以便后面进行搜索。**
-
 
 > ## 产品功能扩展以及技术深度扩展 ##
 
