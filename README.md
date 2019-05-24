@@ -41,6 +41,8 @@ AOP 解决纵向切面问题，主要实现日志和权限控制功能。
     
 Aspect 实现切面，并且使用 logger 来记录日志，用该切面的切面方法来监听 Controller。
 
+有关 Spring 框架中 IOC 容器和 AOP 动态代理的相关知识可参见 [simple-spring](https://github.com/hzcforever/simple-spring)。
+
 ## MySQL 和 MyBatis ##
 
 使用 MySQL 创建数据库和表。
