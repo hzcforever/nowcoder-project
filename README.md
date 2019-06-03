@@ -168,6 +168,10 @@ feed 流主要分为两种，推模式和拉模式。推模式主要是把新鲜
 
 <div align="center"><img src="/img//vm.png" width=""/></div>
 
+通过 Xshell 连接虚拟机。
+
+<div align="center"><img src="/img//xshell.png" width=""/></div>
+
 部署项目（待更...）
 
 ## 功能扩展 ##
