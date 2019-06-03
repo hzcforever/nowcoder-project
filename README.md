@@ -172,7 +172,15 @@ feed 流主要分为两种，推模式和拉模式。推模式主要是把新鲜
 
 <div align="center"><img src="/img//xshell.png" width=""/></div>
 
-部署项目（待更...）
+把从 IDEA 编译导出的 jar 包发到虚拟机的文件夹，通过 `java -jar 文件名.jar` 将项目部署到 CentOS 上，当看到下面两个红色矩形框中的信息时，说明部署成功。
+
+<div align="center"><img src="/img//wenda1.png" width=""/></div><br/>
+
+<div align="center"><img src="/img//wenda2.png" width=""/></div>
+
+在主机上通过虚拟机的 ip 和对应的端口访问网页：
+
+<div align="center"><img src="/img//wenda3.png" width=""/></div>
 
 ## 功能扩展 ##
 
