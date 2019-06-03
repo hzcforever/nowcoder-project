@@ -166,7 +166,7 @@ feed 流主要分为两种，推模式和拉模式。推模式主要是把新鲜
 
 因为该项目只是个练手的 demo，没有必要买服务器，所以就打算直接部署到虚拟机上，把整个软件开发的流程过一遍。安装的是 VMware，下载的镜像是 CentOS 7 x86_64，依次安装了 JDK 1.8、Tomcat 8、MySQL 8.0 和 Redis（所有的配置过程网上博客都写得很详细，这里不加赘述）。
 
-<div align="center"><img src="../img/master//vm.png" width=""/></div>
+<div align="center"><img src="../img//vm.png" width=""/></div>
 
 部署项目（待更...）
 
