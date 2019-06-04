@@ -176,9 +176,13 @@ feed 流主要分为两种，推模式和拉模式。推模式主要是把新鲜
 
 <div align="center"><img src="/img//wenda2.png" width=""/></div>
 
-在主机上通过虚拟机的 ip 和对应的端口访问网页：
+在主机上通过虚拟机的 ip 和对应的端口访问网页（相关功能请自行 fork 后导入 IDEA 并启动，在这里简要贴出几张效果图以便参考）：
 
-<div align="center"><img src="/img//wenda3.png" width=""/></div>
+<div align="center"><img src="/img//wenda3.png" width=""/></div><br/>
+
+<div align="center"><img src="/img//wenda4.png" width=""/></div><br/>
+
+<div align="center"><img src="/img//wenda5.png" width=""/></div>
 
 ## 功能扩展 ##
 
